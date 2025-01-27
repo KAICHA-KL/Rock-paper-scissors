@@ -1,0 +1,75 @@
+ody {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+}
+
+/* Hero section styling */
+.hero {
+    text-align: center;
+    max-width: 600px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #444;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+
+.buttonbox {
+    display: flex;
+    color: black;
+    justify-content: space-between;
+    padding: 40px;
+}
+
+.buttonbox button {
+    padding: 10px 40px; /* Padding inside the button */
+    border: none; /* Remove default border */
+    border-radius: 20px; /* Round corners */
+    font-size: 16px; /* Text size */
+    font-weight: bold; /* Bold text */
+    color: #333; /* Text color */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
+    margin: 5px; /* Space between buttons */
+}
+
+.Rockbutton {
+    background-color: #FFB6C1; /* Light pink */
+}
+
+.Paperbutton {
+    background-color: #ADD8E6; /* Light blue */
+}
+
+.Scissorsbutton {
+    background-color: #98FB98; /* Light green */
+}
+
+/* Hover effect */
+.buttonbox button:hover {
+    background-color: #f0f0f0; /* Light gray on hover */
+    transform: scale(1.05); /* Slightly enlarge the button */
+}
+
+/* Active (click) effect */
+.buttonbox button:active {
+    transform: scale(0.95); /* Slightly shrink the button */
+}
