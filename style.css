@@ -49,7 +49,9 @@ body {
 
 /*Action section styling */
 
-
+.Action {
+    display: flex;
+}
 
 /* Button section styling */
 
