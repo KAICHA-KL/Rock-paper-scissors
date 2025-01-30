@@ -14,30 +14,37 @@
         <h1>Rock Paper Scissors</h1>
         <p>Challenge the computer in this classic game. Choose your move!</p>
         </div>
-        <div class="scoreBox">
-        <div class="Score">
+        <div class="playBox">
+
+         
+         <div class="scoreBox">
+         <div class="Score">
             <h3> Your score</h2>
-            <h2> 1 </h3>
-        </div>
-        <div class="Score ">
+            <h2 id="userScore"> 0 </h3>
+         </div>
+         <div class="Score ">
             <h3> Computer Score</h2>
-            <h2> 1 </h3>
-        </div>
-        
+            <h2 id="computerScore"> 0 </h3>
+         </div>
+         
+        </div> 
+        <button id="startButton">Restart now!</button>  
         </div>
     </div>
 
     <div class ="Action">
-        <div class="imgbox"></div>
-        <i class="fa-solid fa-hand-back-fist"></i> 
-        <div class="imgbox"></div>
-        <i class="fa-solid fa-hand"></i>
+        <div class="imgbox" id="mirror">
+            <i class="fa-solid fa-question fa-7x" id="userIcon"></i>
+    </div>
+        <div class="imgbox" >
+        <i class="fa-solid fa-question fa-7x" id="computerIcon"></i>
+    </div>
     </div>
 
     <div class="buttonbox">
-        <button class="Rockbutton">Rock</button>
-        <button class="Paperbutton">Paper</button>
-        <button class="Scissorsbutton">Scissors</button>
+        <button class="choiceButton" data-choice="ROCK">Rock</button>
+        <button class="choiceButton" data-choice="PAPER">Paper</button>
+        <button class="choiceButton" data-choice="SCISSORS">Scissors</button>
     </div>
     
 </body>

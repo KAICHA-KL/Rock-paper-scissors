@@ -4,6 +4,7 @@ body {
     flex-direction: column;
     align-items :center ;
     font-family: sans-serif;
+    margin:0;
     
 }
 
@@ -51,16 +52,56 @@ body {
 
 .Action {
     display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    max-width: 600px;
+}
+
+.imgbox{
+    animation: bounce 1s infinite;
+    display: inline-block; /* or flex depending on layout needs */
+  }
+
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+  
+
+#mirror {
+    transform: scaleX(-1);
 }
 
 /* Button section styling */
 
+.playBox {
+    display: flex;
+    color: black;
+    flex-direction: column;
+    padding: 40px;
+   }
 .buttonbox {
     display: flex;
     color: black;
     justify-content: center;
     padding: 40px;
     max-width: 600px;
+}
+.playBox button{
+
+    padding: 10px 40px; /* Padding inside the button */
+    border: none; /* Remove default border */
+    border-radius: 20px; /* Round corners */
+    font-size: 16px; /* Text size */
+    font-weight: bold; /* Bold text */
+    color: #333; /* Text color */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
+    margin:30px; /* Space between buttons */
 }
 
 .buttonbox button {
@@ -88,13 +129,13 @@ body {
 }
 
 /* Hover effect */
-.buttonbox button:hover {
+button:hover {
     background-color: #f0f0f0; /* Light gray on hover */
     transform: scale(1.05); /* Slightly enlarge the button */
 }
 
 /* Active (click) effect */
-.buttonbox button:active {
+button:active {
     transform: scale(0.95); /* Slightly shrink the button */
 }
 

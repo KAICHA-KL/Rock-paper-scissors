@@ -1,68 +1,49 @@
-// Step 1 //
-// Create new function called getComputerChoice
-// get computer choice needs to select a randome number
-// random number will be assigned to rock paper and scissors
-// therefore computer selects a random move to make
 
-// Step 2 //
-// Create new function called getHumanChoice
-// get user to input their choice by number of text
-// player selection is made
-
-// Step 3 //
-// Create new function called compare
-// Pass both player and computer choice to that function
-// Establish the 3 conditions
-// 1. Rock & scissors - rock wins
-// 2. Scissors & paper - Scissors wins
-// 3. paper & rock - paper wins
-// Based on user options and these conditions return the winner value
-// Increment the humanscore or computerscore in the global scope
-
-//Step 4//
-// Create a new function called playgame
-// this function iterates 5 times
-// Taking the user input 5 times and calling compare for the same
-// Winner is declared based on final score after 5 games
-
-//Code below//
 
 //DECLARING GLOBAL VARIABLES
 
-let humanChoice = "none";
+let userChoice = "none";
 let computerChoice = "none";
 let computerPoint = 0;
 let humanPoint = 0;
 let decision = 0;
 
-//FUNCTION TO GET THE USERS CHOICE AND CONVERT IT TO UPPER CASE
+//FUNCTION TO GET THE USERS CHOICE 
 
-function getHumanChoice() 
-{
-    while (decision == 0)
-    {
-     humanChoice = prompt( "What do you choose Rock,Paper or Scissors? Type below", "none");
-    humanChoice = humanChoice.toUpperCase();
-    if ( humanChoice == "ROCK" || humanChoice == "PAPER" || humanChoice == "SCISSORS" )
-       {
-      alert("Choice is valid");
-      decision = 1;
+
+  const buttons = document.querySelectorAll('.choiceButton');
+    buttons.forEach(button => {
+    button.addEventListener('click',(event) => {
+    userChoice = event.target.dataset.choice;
+    if (userChoice == "ROCK"){
+      document.getElementById("userIcon").className = "fa-solid fa-hand-back-fist fa-7x";
+    } else if ( userChoice == "PAPER") {
+      document.getElementById("userIcon").className = "fa-solid fa-hand fa-7x";
+    } else {
+      document.getElementById("userIcon").className = "fa-solid fa-hand-scissors fa-7x";
     }
 
-   }
-}
 
-// FUNCTION TO GET THE COMPUTER CHOICE BY CREATING A RANDOM NUMBER FUNCTION AND CONVERTING IT TO
-// 3 POSSIBLE OPTION AND ASSIGNING IT TO EITHER ROCK PAPER OR SCISSOR
+    getComputerChoice();
+    compare(computerChoice,userChoice);
+    setTimeout(resetIcon,1000);
+
+    });
+
+    });
+
 
 function getComputerChoice() {
   let choice = Math.floor(Math.random() * 3 + 1);
   if (choice == 1) {
     computerChoice = "ROCK";
+    document.getElementById("computerIcon").className = "fa-solid fa-hand-back-fist fa-7x";
   } else if (choice == 2) {
     computerChoice = "PAPER";
+    document.getElementById("computerIcon").className = "fa-solid fa-hand fa-7x";
   } else {
     computerChoice = "SCISSORS";
+    document.getElementById("computerIcon").className = "fa-solid fa-hand-scissors fa-7x";
   }
 
 }
@@ -71,34 +52,50 @@ function getComputerChoice() {
 
 function compare(computerChoice, humanChoice) {
   if (computerChoice == "ROCK" && humanChoice == "PAPER") {
-    humanPoint = humanPoint + 1;
-    alert("you win!!!!");
+    humanPoint++;
+    document.getElementById("userScore").textContent=humanPoint;
 
+  } else if (computerChoice == humanChoice){
+    return;
   } else if (computerChoice == "PAPER" && humanChoice == "SCISSORS") {
-    humanPoint = humanPoint + 1;
-    alert("you win!!!!");
+    humanPoint++;
+    document.getElementById("userScore").textContent=humanPoint;
+    
 
   } else if (computerChoice == "SCISSORS" && humanChoice == "ROCK") {
-    humanPoint = humanPoint + 1;
-    alert("you win!!!!");
+    humanPoint++;
+    document.getElementById("userScore").textContent=humanPoint;
 
   } else {
-    computerPoint = computerPoint + 1;
-    alert("Computer wins!");
+    computerPoint++;
+    document.getElementById("computerScore").textContent=computerPoint;
+    
   }
    
 }
 
-// FUNCTION TO MAKE IT A TOURNAMENT STYLE GAME 
+// FUNCTION TO RESET ICON 
 
-function playgame() {
-  for (let i = 0; i <= 4; i++) {
-    getHumanChoice();
-    getComputerChoice();
-    compare(computerChoice, humanChoice);
-    alert("you score is = "+humanPoint+"computer score is =" + computerPoint);
-    decision = 0;
-  }
+function resetIcon() {
+  document.getElementById("computerIcon").className = "fa-solid fa-question fa-7x";
+  document.getElementById("userIcon").className = "fa-solid fa-question fa-7x";
+
 }
 
-//playgame();
+// FUNCTION TO START GAME
+
+function playgame() {
+      
+  resetIcon();
+  computerPoint = 0;
+  humanPoint = 0;
+  document.getElementById("userScore").textContent=0;
+  document.getElementById("computerScore").textContent=0;
+    
+}
+
+
+
+
+document.querySelector('#startButton').addEventListener('click',playgame);
+
