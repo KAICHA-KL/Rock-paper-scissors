@@ -1,22 +1,23 @@
-ody {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
-    color: #333;
+/* Body styling */
+body {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; /* Full viewport height */
+    flex-direction: column;
+    align-items :center ;
+    font-family: sans-serif;
+    
 }
 
 /* Hero section styling */
 .hero {
+    display: flex;
     text-align: center;
     max-width: 600px;
     padding: 20px;
-    background-color: #fff;
+    background-color: #ffffff;
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  
+    align-items: center;
+    justify-content: center;
 }
 
 .hero h1 {
@@ -31,12 +32,33 @@ ody {
     margin-bottom: 20px;
 }
 
+.scoreBox{
+    display: flex;
+    margin: 20px;
+}
+
+.Score {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    min-width: 80px;
+    max-width: 80px;
+    margin: 10px;
+}
+
+/*Action section styling */
+
+
+
+/* Button section styling */
 
 .buttonbox {
     display: flex;
     color: black;
-    justify-content: space-between;
+    justify-content: center;
     padding: 40px;
+    max-width: 600px;
 }
 
 .buttonbox button {
@@ -48,19 +70,19 @@ ody {
     color: #333; /* Text color */
     cursor: pointer; /* Pointer cursor on hover */
     transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
-    margin: 5px; /* Space between buttons */
+    margin:30px; /* Space between buttons */
 }
 
 .Rockbutton {
-    background-color: #FFB6C1; /* Light pink */
+    background-color: #eeeeee; /* Light pink */
 }
 
 .Paperbutton {
-    background-color: #ADD8E6; /* Light blue */
+    background-color: #eeeeee; /* Light blue */
 }
 
 .Scissorsbutton {
-    background-color: #98FB98; /* Light green */
+    background-color: #eeeeee; /* Light green */
 }
 
 /* Hover effect */
@@ -73,3 +95,5 @@ ody {
 .buttonbox button:active {
     transform: scale(0.95); /* Slightly shrink the button */
 }
+
+/*Score box 
